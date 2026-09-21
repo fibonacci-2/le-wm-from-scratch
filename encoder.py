@@ -18,7 +18,7 @@ class ViT(nn.Module):
     def forward(self, img):
         model = self.model
         output = model.forward_features(self.transforms(img))
-        output = model.forward_head(output, pre_logits=True) # 1, 192
+        output = model.forward_head(output, pre_logits=True) # B, 192
         return output
         
 class MLP(nn.Module):
